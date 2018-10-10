@@ -116,6 +116,7 @@ class AzureRequest
 
             if (isset($options['query'])) {
                 $headers[] = 'x-ms-documentdb-isquery: True';
+                $headers[] = 'x-ms-documentdb-query-enablecrosspartition: True';
                 $headers[] = 'x-ms-max-item-count: -1';
                 $headers[] = 'Content-Type: application/sql';
                 $headers[] = 'Content-Length: ' . strlen($options['query']);
